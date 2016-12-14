@@ -19,7 +19,13 @@
               -# %p
               -#   =
               %p
-                a
-                b
-                c
-                d
+                %i.fa.fa-reply{"aria-hidden" => "true"}
+                XXX
+                
+                %i.fa.fa-retweet{"aria-hidden" => "true"}
+                = tweet.retweets.count
+
+                %i.fa.fa-heart{"aria-hidden" => "true"}
+                = tweet.votes.count
+
+                •••
