@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  resources :tweets
+  resources :tweets do
+    member do
+      get :heart
+    end
+  end
+  resources :tweets do
+    member do
+      get :retweet
+    end
+  end
+  resources :tweets do
+    member do
+      get :reply
+    end
+  end
   get 'tweets/index'
 
   root 'tweets#index'

@@ -19,13 +19,16 @@
               -# %p
               -#   =
               %p
+                -# = link_to reply_tweet_path(tweet) do
                 %i.fa.fa-reply{"aria-hidden" => "true"}
-                XXX
-                
-                %i.fa.fa-retweet{"aria-hidden" => "true"}
+                = tweet.replies.count
+
+                = link_to retweet_tweet_path(tweet) do
+                  %i.fa.fa-retweet{"aria-hidden" => "true"}
                 = tweet.retweets.count
 
-                %i.fa.fa-heart{"aria-hidden" => "true"}
-                = tweet.votes.count
+                = link_to heart_tweet_path(tweet) do
+                  %i.fa.fa-heart{"aria-hidden" => "true"}
+                = tweet.hearts.count
 
                 •••
